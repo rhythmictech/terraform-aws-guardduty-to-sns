@@ -18,20 +18,22 @@ No requirements.
 
 ## Providers
 
-No provider.
+| Name | Version |
+|------|---------|
+| aws | n/a |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| name | Moniker to apply to all resources in the module | `string` | n/a | yes |
+| finding\_publishing\_frequency | Frequency with which to publish findings (must be one of `FIFTEEN_MINUTES`, `ONE_HOUR`, `SIX_HOURS`) | `string` | `"ONE_HOUR"` | no |
+| guardduty\_enabled | Whether or not to enable the GuardDuty service | `bool` | `true` | no |
+| notification\_arn | SNS Topic to send notifications to | `string` | n/a | yes |
 | tags | User-Defined tags | `map(string)` | `{}` | no |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| tags\_module | Tags Module in it's entirety |
+No output.
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
