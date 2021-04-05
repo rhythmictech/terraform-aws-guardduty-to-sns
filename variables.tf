@@ -1,12 +1,7 @@
-variable "finding_publishing_frequency" {
-  default     = "ONE_HOUR"
-  description = "Frequency with which to publish findings (must be one of `FIFTEEN_MINUTES`, `ONE_HOUR`, `SIX_HOURS`)"
-  type        = string
-}
-
-variable "guardduty_enabled" {
+variable "cloudwatch_rule_enabled" {
   default     = true
-  description = "Whether or not to enable the GuardDuty service"
+  description = "Whether or not to enable the CloudWatch Rule"
+  type        = bool
 }
 
 variable "notification_arn" {
