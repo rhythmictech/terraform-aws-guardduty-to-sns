@@ -17,27 +17,39 @@ module "guardduty-to-sns" {
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12.5 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.0.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [aws_cloudwatch_event_rule.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_rule) | resource |
+| [aws_cloudwatch_event_target.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_target) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| finding\_publishing\_frequency | Frequency with which to publish findings (must be one of `FIFTEEN_MINUTES`, `ONE_HOUR`, `SIX_HOURS`) | `string` | `"ONE_HOUR"` | no |
-| guardduty\_enabled | Whether or not to enable the GuardDuty service | `bool` | `true` | no |
-| notification\_arn | SNS Topic to send notifications to | `string` | n/a | yes |
-| tags | User-Defined tags | `map(string)` | `{}` | no |
+| <a name="input_notification_arn"></a> [notification\_arn](#input\_notification\_arn) | SNS Topic to send notifications to | `string` | n/a | yes |
+| <a name="input_cloudwatch_rule_enabled"></a> [cloudwatch\_rule\_enabled](#input\_cloudwatch\_rule\_enabled) | Whether or not to enable the CloudWatch Rule | `bool` | `true` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | User-Defined tags | `map(string)` | `{}` | no |
 
 ## Outputs
 
-No output.
-
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## The Giants underneath this module
